@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@ghostery/adblocker-electron": "2.12.5",
-    "@ghostery/adblocker-electron-preload": "^2.12.5",
+    "@ghostery/adblocker-electron-preload": "^2.18.0",
     "@inversifyjs/binding-decorators": "^1.1.3",
     "@mediago/browser-extension": "workspace:*",
     "@mediago/electron-preload": "workspace:*",
