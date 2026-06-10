@@ -27,7 +27,7 @@
     "axios": "^1.15.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "dayjs": "^1.11.11",
+    "dayjs": "^1.11.21",
     "i18next": "^25.6.0",
     "immer": "^10.1.1",
     "localforage": "^1.10.0",
