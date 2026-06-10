@@ -29,7 +29,7 @@
     "rimraf": "^6.0.1",
     "rollup-plugin-copy": "^3.5.0",
     "tsdown": "^0.15.9",
-    "tsx": "^4.20.6"
+    "tsx": "^4.22.4"
   },
   "dependencies": {
     "@ghostery/adblocker-electron": "2.12.5",
