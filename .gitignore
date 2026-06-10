@@ -1,0 +1,22 @@
+node_modules
+*.local
+.idea
+.parcel-cache
+*.tsno.mjs
+.DS_Store
+log
+.turbo
+.claude
+.store
+release
+go.work.sum
+apps/core/bin/
+apps/electron/bin/
+apps/main/bin/
+.deps/
+
+tmp/
+
+# Local planning notes that should not be published with the open-source repo.
+docs/.vitepress/seo-keyword-map*.md
+docs/.vitepress/private/
