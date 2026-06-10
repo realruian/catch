@@ -28,7 +28,7 @@
     "glob": "^11.0.3",
     "rimraf": "^6.0.1",
     "rollup-plugin-copy": "^3.5.0",
-    "tsdown": "^0.15.9",
+    "tsdown": "^0.22.2",
     "tsx": "^4.20.6"
   },
   "dependencies": {

@@ -24,7 +24,7 @@
     "typescript": "^6.0.2",
     "electron": "41.1.0",
     "esbuild": "^0.25.10",
-    "tsdown": "^0.15.9",
+    "tsdown": "^0.22.2",
     "tsx": "^4.11.0"
   },
   "dependencies": {
