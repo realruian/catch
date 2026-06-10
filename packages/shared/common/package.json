@@ -18,7 +18,7 @@
   "author": "caorushizi",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^24.7.2",
+    "@types/node": "^25.9.2",
     "typescript": "^6.0.2",
     "tsdown": "^0.15.9"
   }
