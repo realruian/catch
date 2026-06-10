@@ -2,6 +2,10 @@
 
 > 粘贴链接，接住任何视频。A minimal macOS video downloader — paste a link, catch the video.
 
+<p align="center">
+  <img src="./.github/screenshot.png" width="680" alt="Catch 主界面：毛玻璃窗口、胶囊输入框、下载列表" />
+</p>
+
 Catch 是一个极简的 macOS 视频下载工具：一个输入框、一个列表，没有别的。支持 YouTube、哔哩哔哩、X/Twitter 等 **1800+ 网站**（由 yt-dlp / BBDown 驱动），自动识别链接类型、自动抓取视频标题，下载完成点击即可打开文件。
 
 ## 特性
