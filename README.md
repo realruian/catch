@@ -1,47 +1,66 @@
 # Catch
 
-> 粘贴链接，接住任何视频。A minimal macOS video downloader — paste a link, catch the video.
+[English](README.md) | [简体中文](README.zh-CN.md)
+
+> Paste a link. Catch the video.
+
+Catch is a minimal macOS video downloader with one input and one download list. It supports YouTube, Bilibili, X/Twitter, and more than 1,800 other sites through yt-dlp, BBDown, and N_m3u8DL-RE.
 
 <p align="center">
-  <img src="./.github/screenshot.png" width="680" alt="Catch 主界面：毛玻璃窗口、胶囊输入框、下载列表" />
+  <img src="./.github/screenshot.png" width="680" alt="Catch main window" />
 </p>
 
-Catch 是一个极简的 macOS 视频下载工具：一个输入框、一个列表，没有别的。支持 YouTube、哔哩哔哩、X/Twitter 等 **1800+ 网站**（由 yt-dlp / BBDown 驱动），自动识别链接类型、自动抓取视频标题，下载完成点击即可打开文件。
+## Features
 
-## 特性
+- **Three ways to submit** — paste into the input, press `⌘V` anywhere in the window, or drag a link into the app.
+- **Clipboard suggestion** — copy a supported video link and return to Catch for a one-click download prompt.
+- **Real titles** — resolves the page title before downloading and uses it for the task and output filename.
+- **Automatic engine selection** — Bilibili uses BBDown, HLS streams use N_m3u8DL-RE, and other sites use yt-dlp.
+- **Actionable failures** — blocks obviously invalid links early and exposes the complete download log when an engine fails.
+- **Native macOS presentation** — vibrancy, a hidden title bar, capsule controls, and light/dark appearance.
+- **No telemetry** — upstream analytics and Sentry reporting have been removed.
 
-- **三种投递方式**：粘贴链接、窗口内任意位置 ⌘V、把链接直接拖进窗口
-- **剪贴板检测**：复制了视频链接再切回窗口，自动弹出一键下载建议
-- **真实标题**：自动抓取视频页标题作为任务名和文件名，不是无意义的时间戳
-- **自动识别**：B 站走 BBDown、m3u8 流走 N_m3u8DL-RE、其余交给 yt-dlp，无需手选类型
-- **失败兜底**：明显无效的链接（如网站首页）提交时即拦截；任何下载失败都会弹出通知和原因，可一键查看完整日志
-- **macOS 原生质感**：Liquid Glass 毛玻璃（原生 vibrancy）、隐藏式标题栏、胶囊控件、亮暗双模式，遵循 macOS 26 设计规范
-- **零遥测**：移除了上游项目的统计上报和 Sentry，不向任何服务器发送使用数据
+## Installation
 
-## 安装
+Download the Apple Silicon DMG from [Releases](https://github.com/realruian/catch/releases). The app is not notarized, so use right-click → **Open** the first time.
 
-从 [Releases](../../releases) 下载 `Catch-setup-darwin-arm64-*.dmg`（Apple Silicon）。
+## Build from source
 
-应用未经 Apple 公证，首次打开请右键 → 打开。
-
-## 从源码构建
+Requirements: Node.js 20 or newer, pnpm 10 or newer, and Go 1.22 or newer.
 
 ```bash
-# 依赖：Node.js ≥ 20、pnpm ≥ 10、Go ≥ 1.22
+git clone https://github.com/realruian/catch.git
+cd catch
 pnpm install
-pnpm deps:download   # 下载 yt-dlp / ffmpeg / BBDown 等二进制
-pnpm dev:electron    # 开发模式（热重载）
-pnpm release:electron  # 打包 .dmg
+pnpm deps:download
+pnpm dev:electron
 ```
 
-## 技术栈
+Create a DMG with:
 
-Electron + React 19 + TailwindCSS 4 + Ant Design 6（前端），Go + Gin + SQLite（下载调度核心），下载引擎为 [yt-dlp](https://github.com/yt-dlp/yt-dlp)、[BBDown](https://github.com/nilaoda/BBDown)、[N_m3u8DL-RE](https://github.com/nilaoda/N_m3u8DL-RE)、[ffmpeg](https://ffmpeg.org/)。
+```bash
+pnpm release:electron
+```
 
-## 致谢
+## Development checks
 
-本项目基于 [caorushizi/mediago](https://github.com/caorushizi/mediago)（MIT）深度改造：重写了整个界面与交互、精简为单一下载流、增加标题解析与剪贴板集成、移除遥测。感谢原作者的优秀架构。
+```bash
+pnpm check
+```
 
-## 许可
+The project is a pnpm/Turborepo monorepo. See [CONTRIBUTING.md](CONTRIBUTING.md) for the package layout and development workflow.
 
-[MIT](./LICENSE)。仅供学习研究使用，请遵守目标网站的服务条款，勿下载侵权内容。
+## Technology
+
+- Electron and React 19 for the desktop experience.
+- Tailwind CSS 4 and Ant Design 6 for the interface.
+- Go, Gin, and SQLite for download orchestration.
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp), [BBDown](https://github.com/nilaoda/BBDown), [N_m3u8DL-RE](https://github.com/nilaoda/N_m3u8DL-RE), and [ffmpeg](https://ffmpeg.org/) as download and media engines.
+
+## Acknowledgements
+
+Catch is a substantial customization of [caorushizi/mediago](https://github.com/caorushizi/mediago) under the MIT License. It replaces the interface and interaction model, narrows the product to a single download flow, adds title parsing and clipboard integration, and removes telemetry. The original copyright notice remains in [LICENSE](LICENSE).
+
+## License and responsible use
+
+[MIT](LICENSE). Follow the terms of service of the source website and do not download material you are not authorized to use.
